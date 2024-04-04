@@ -93,4 +93,12 @@ let imgModal = (src) => {
       handleSwipe('right');
     }
   });
+
+  // Add event listener for ESC key to close the modal
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modalOpen) {
+      modal.remove();
+      modalOpen = false; // Reset the flag when the modal is closed
+    }
+  });
 };
