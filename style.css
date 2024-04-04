@@ -1,68 +1,61 @@
+main {
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content:center; 
+}
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+header {
+  background-color: #f2f2f2;
+  padding: 20px;
+  text-align: center;
+}
+h1 {
+  margin: 0;
+}
+section {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 20px;
+  text-align: center;
+  resize: both;
+  overflow: auto;
+  width: 80%;
+  background-color: rgba(255,255,255,0.3);
+}
+.logo {
+  width:auto!important;
+  height:250px;
+  margin-right:.5rem;
+}
+h2 {
+  margin: 0;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+p {
+  margin: 0;
+}
+
+.contact-info {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.image-container {
+  display: flex;
+}
 /* Media queries for mobile view */
 @media (min-width: 481px) {
-  main {
-    display: flex; 
-    flex-wrap: wrap; 
-    justify-content:center; 
-  }
-
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-
-  header {
-    background-color: #f2f2f2;
-    padding: 20px;
-    text-align: center;
-  }
-
-  h1 {
-    margin: 0;
-  }
-
-  section {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    margin: 10px;
-    padding: 20px;
-    text-align: center;
-    resize: both;
-    overflow: auto;
-    width: 80%;
-  }
-
-  h2 {
-    margin: 0;
-  }
-
-  .logo {
-    width:auto!important;
-    height:250px;
-    margin-right:.5rem;
-  }
-
-  img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 10px;
-  }
-
-  p {
-    margin: 0;
-  }
-
-  .contact-info {
-    text-align: center;
-    margin-top: 20px;
-  }
-
-  .image-container {
-    display: flex;
-  }
-
   .image-container img {
     margin-right: 10px; /* Optional - adds some space between images */
     width: 18%;
@@ -83,23 +76,26 @@
     display: flex;
   }
 
-  .header-container {
-    background-color: #f2f2f2; /* set the background color for the entire header */
-    display: flex;
+  .header-container-mobile {
+    background-color: rgba(255,255,255,0.2);
+    display: block;
     justify-content: space-between;
   }
 
-  .header-container-mobile {
-    display: none;
-  }
+  .napomene {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
 
-  .left-section,
+  }
   .right-section {
-    width: 30%; /* calculate the width of left and right sections based on center logo width */
     padding: 20px;
     text-align: center;
   }
-
+  .left-section {
+    padding: 20px;
+    text-align: center;
+  }
   .center-section {
     display: block;
     width: 100%;
@@ -161,69 +157,6 @@
 
 /* Media queries for mobile view */
 @media (max-width: 480px) {
-  main {
-    display: flex; 
-    flex-wrap: wrap; 
-    justify-content:center; 
-  }
-
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-
-  header {
-    background-color: #f2f2f2;
-    padding: 20px;
-    text-align: center;
-  }
-
-  h1 {
-    margin: 0;
-  }
-
-  section {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    margin: 10px;
-    padding: 20px;
-    text-align: center;
-    resize: both;
-    overflow: auto;
-    width: 80%;
-  }
-
-  h2 {
-    margin: 0;
-  }
-
-  .logo {
-    width:auto!important;
-    height:250px;
-    margin-right:.5rem;
-  }
-
-  img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 10px;
-  }
-
-  p {
-    margin: 0;
-  }
-
-  .contact-info {
-    text-align: center;
-    margin-top: 20px;
-  }
-
-  .image-container {
-    display: flex;
-  }
-
   .image-container img {
     margin-right: 10px; /* Optional - adds some space between images */
     width: 30%;
@@ -238,6 +171,12 @@
     white-space: nowrap;
     width: 85%;
     text-align: justify;
+    background-color: rgba(255,255,255,0.2);
+  }
+
+  .multiline-cene,
+  .multiline-opis {
+    background-color: rgba(255,255,255,0.2);
   }
 
   .container {
@@ -245,19 +184,10 @@
     width: 100%;
   }
 
-  .header-container {
-    display: none;
-  }
-
   .header-container-mobile {
-    background-color: #f2f2f2; /* set the background color for the entire header */
-    display: flex;
+    background-color: rgba(255,255,255,0.2);
+    display: block;
     justify-content: space-between;
-  }
-
-  .left-section,
-  .right-section {
-    width: 50%; /* calculate the width of left and right sections based on center logo width */
     padding: 20px;
     text-align: center;
   }
