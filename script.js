@@ -1,104 +1,87 @@
-const images = document.querySelectorAll('.image');
-let imgSrc;
-let currentIndex = 0; // Keep track of the current image index
-let modalOpen = false; // Flag to track if a modal is open
+const imageList = document.querySelectorAll('.image');
+const pictureList = document.querySelectorAll('.picture');
+const slikaList = document.querySelectorAll('.slika');
+let currentIndex = 0;
+let currentList = imageList;
+let modalOpen = false;
+let modal = null;
 
-images.forEach((img, index) => {
-  img.addEventListener('click', (e) => {
-    if (!modalOpen) { // Check if a modal is not already open
-      imgSrc = e.target.src;
-      currentIndex = index; // Update the current index when an image is clicked
-      imgModal(imgSrc);
-      modalOpen = true; // Set the flag to true when a modal is opened
-    }
+const handleImageClick = (imgList) => {
+  imgList.forEach((img, index) => {
+    img.addEventListener('click', () => {
+      if (!modalOpen) {
+        currentIndex = index;
+        currentList = imgList;
+        openModal(img.getAttribute('src'));
+      }
+    });
   });
-});
-
-// Function to handle swiping left or right
-let handleSwipe = (direction) => {
-  if (direction === 'left' && currentIndex > 0) {
-    currentIndex--;
-  } else if (direction === 'right' && currentIndex < images.length - 1) {
-    currentIndex++;
-  }
-  imgSrc = images[currentIndex].src;
-  updateModalImage(imgSrc);
 };
 
-// Function to update the modal image
-let updateModalImage = (src) => {
-  const modalImage = document.querySelector('.modal img');
-  modalImage.setAttribute('src', src);
-};
-
-// Function to create the modal
-let imgModal = (src) => {
-  const modal = document.createElement('div');
+const openModal = (src) => {
+  modalOpen = true;
+  modal = document.createElement('div');
   modal.setAttribute('class', 'modal');
   document.querySelector('body').append(modal);
+
   const newImage = document.createElement('img');
   newImage.setAttribute('src', src);
   const closeBtn = document.createElement('span');
   closeBtn.setAttribute('class', 'closeBtn');
   closeBtn.innerHTML = "X";
   closeBtn.onclick = () => {
-    modal.remove();
-    modalOpen = false; // Reset the flag when the modal is closed
+    closeModal();
   };
   modal.append(newImage, closeBtn);
 
-  // Add event listeners for both touch and mouse events
-  let startX, startY;
-  newImage.addEventListener('touchstart', (e) => {
-    startX = e.touches[0].clientX;
-    startY = e.touches[0].clientY;
-  });
-  newImage.addEventListener('touchend', (e) => {
-    let endX = e.changedTouches[0].clientX;
-    let endY = e.changedTouches[0].clientY;
-    let diffX = startX - endX;
-    let diffY = startY - endY;
-    if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 50) { // Swipe detected
-      if (diffX > 0) {
-        handleSwipe('right');
-      } else {
-        handleSwipe('left');
-      }
-    }
-  });
-
   newImage.addEventListener('mousedown', (e) => {
-    startX = e.clientX;
-  });
-  newImage.addEventListener('mouseup', (e) => {
-    let endX = e.clientX;
-    let diffX = startX - endX;
-    if (Math.abs(diffX) > 50) { // Swipe detected
-      if (diffX > 0) {
-        handleSwipe('right');
-      } else {
-        handleSwipe('left');
+    let startX = e.clientX;
+    newImage.addEventListener('mouseup', (e) => {
+      let endX = e.clientX;
+      let diffX = startX - endX;
+      if (Math.abs(diffX) > 50) {
+        if (diffX > 0) {
+          handleSwipe('right');
+        } else {
+          handleSwipe('left');
+        }
       }
-    }
+    });
   });
 
-  // Add click event listeners for tapping left or right
   modal.addEventListener('click', (e) => {
     if (e.target.classList.contains('modal') || e.target.classList.contains('closeBtn')) {
-      modal.remove();
-      modalOpen = false; // Reset the flag when the modal is closed
-    } else if (e.clientX < window.innerWidth / 2) { // Tap left half
+      closeModal();
+    } else if (e.clientX < window.innerWidth / 2) {
       handleSwipe('left');
-    } else { // Tap right half
+    } else {
       handleSwipe('right');
     }
   });
 
-  // Add event listener for ESC key to close the modal
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && modalOpen) {
-      modal.remove();
-      modalOpen = false; // Reset the flag when the modal is closed
+      closeModal();
     }
   });
 };
+
+const closeModal = () => {
+  modal.remove();
+  modalOpen = false;
+};
+
+const handleSwipe = (direction) => {
+  if (direction === 'left' && currentIndex > 0) {
+    currentIndex--;
+  } else if (direction === 'right' && currentIndex < currentList.length - 1) {
+    currentIndex++;
+  }
+  const newSrc = currentList[currentIndex].getAttribute('src');
+  const modalImage = modal.querySelector('img');
+  modalImage.setAttribute('src', newSrc);
+};
+
+handleImageClick(imageList);
+handleImageClick(pictureList);
+handleImageClick(slikaList);
