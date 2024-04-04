@@ -3,11 +3,7 @@ main {
   flex-wrap: wrap; 
   justify-content:center; 
 }
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
+
 header {
   background-color: #f2f2f2;
   padding: 20px;
@@ -56,6 +52,15 @@ p {
 }
 /* Media queries for mobile view */
 @media (min-width: 481px) {
+  body {
+    background-image: url('background_comp.jpeg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
   .image-container img {
     margin-right: 10px; /* Optional - adds some space between images */
     width: 18%;
@@ -157,6 +162,16 @@ p {
 
 /* Media queries for mobile view */
 @media (max-width: 480px) {
+  body {
+    background-image: url('background.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
   .image-container img {
     margin-right: 10px; /* Optional - adds some space between images */
     width: 30%;
