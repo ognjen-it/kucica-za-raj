@@ -34,20 +34,9 @@ const openModal = (src) => {
   };
   modal.append(newImage, closeBtn);
 
-  newImage.addEventListener('mousedown', (e) => {
-    let startX = e.clientX;
-    newImage.addEventListener('mouseup', (e) => {
-      let endX = e.clientX;
-      let diffX = startX - endX;
-      if (Math.abs(diffX) > 50) {
-        if (diffX > 0) {
-          handleSwipe('right');
-        } else {
-          handleSwipe('left');
-        }
-      }
-    });
-  });
+  newImage.addEventListener('touchstart', handleTouchStart);
+  newImage.addEventListener('touchmove', handleTouchMove);
+  newImage.addEventListener('touchend', handleTouchEnd);
 
   modal.addEventListener('click', (e) => {
     if (e.target.classList.contains('modal') || e.target.classList.contains('closeBtn')) {
@@ -80,6 +69,27 @@ const handleSwipe = (direction) => {
   const newSrc = currentList[currentIndex].getAttribute('src');
   const modalImage = modal.querySelector('img');
   modalImage.setAttribute('src', newSrc);
+};
+
+const handleTouchStart = (e) => {
+  startX = e.touches[0].clientX;
+};
+
+const handleTouchMove = (e) => {
+  e.preventDefault();
+  let endX = e.touches[0].clientX;
+  let diffX = startX - endX;
+  if (Math.abs(diffX) > 50) {
+    if (diffX > 0) {
+      handleSwipe('right');
+    } else {
+      handleSwipe('left');
+    }
+  }
+};
+
+const handleTouchEnd = () => {
+  startX = null;
 };
 
 handleImageClick(imageList);
