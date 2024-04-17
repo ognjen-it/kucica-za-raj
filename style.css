@@ -13,7 +13,6 @@ h1 {
   margin: 0;
 }
 section {
-  background-color: #f9f9f9;
   border: 1px solid #ddd;
   border-radius: 10px;
   margin: 10px;
@@ -45,15 +44,29 @@ p {
 .contact-info {
   text-align: center;
   margin-top: 20px;
+  background-color: rgba(255,255,255,0.5);
 }
 
 .image-container {
   display: flex;
 }
+
+.multiline-cene,
+.multiline-opis {
+  background-color: rgba(255,255,255,0.5);
+}
+
+.napomene {
+  width: 100%;
+  text-align: left;
+  padding: 20px;
+  background-color: rgba(255,255,255,0.5);
+}
+
 /* Media queries for mobile view */
 @media (min-width: 481px) {
   body {
-    background-image: url('background_comp.jpeg');
+    background-color: gray;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -87,12 +100,6 @@ p {
     justify-content: space-between;
   }
 
-  .napomene {
-    width: 100%;
-    text-align: center;
-    padding: 20px;
-
-  }
   .right-section {
     padding: 20px;
     text-align: center;
@@ -169,6 +176,7 @@ p {
     background-size: cover;
     font-family: Arial, sans-serif;
     margin: 0;
+    font-family: "Lucida Handwriting", "Times", cursive;
     padding: 0;
   }
 
@@ -177,6 +185,9 @@ p {
     width: 30%;
   }
 
+  .image-section {
+    padding: 28px;
+  }
   .multiline {
     display: none;
   }
@@ -186,11 +197,6 @@ p {
     white-space: nowrap;
     width: 85%;
     text-align: justify;
-    background-color: rgba(255,255,255,0.2);
-  }
-
-  .multiline-cene,
-  .multiline-opis {
     background-color: rgba(255,255,255,0.2);
   }
 
