@@ -58,7 +58,7 @@ p {
 
 .multiline-cene,
 .multiline-opis {
-  background-color: rgba(255, 255, 255, 0.45);
+  background-color: rgba(255, 255, 255, 0.35);
   text-wrap: wrap;
 }
 
@@ -66,7 +66,7 @@ p {
   width: 100%;
   text-align: left;
   padding: 20px;
-  background-color: rgba(255, 255, 255, 0.45);
+  background-color: rgba(255, 255, 255, 0.35);
 }
 
 /* Media queries for computer view */
@@ -200,14 +200,15 @@ p {
     padding: 2px;
     text-align: center;
     border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(222, 208, 14, 0.3);
+    /* background-color: rgba(255, 255, 255, 0.3); */
   }
 
   .left-section-2 {
     padding: 2px;
     text-align: left;
     border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(222, 208, 14, 0.3);
   }
 
   .image-container img {
