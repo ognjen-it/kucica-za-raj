@@ -13,7 +13,7 @@ h1 {
   margin: 0;
 }
 section {
-  border: 1px solid #ddd;
+  border: 0.1px solid rgb(100, 100, 100);
   border-radius: 10px;
   margin: 10px;
   padding: 20px;
@@ -21,7 +21,7 @@ section {
   resize: both;
   overflow: auto;
   width: 80%;
-  background-color: rgba(255,255,255,0.3);
+  background-color: rgba(255,255,255,0.1);
 }
 .logo {
   width:auto!important;
@@ -44,7 +44,7 @@ p {
 .contact-info {
   text-align: center;
   margin-top: 20px;
-  background-color: rgba(255,255,255,0.5);
+  background-color: rgba(255,255,255,0.45);
 }
 
 .image-container {
@@ -53,17 +53,17 @@ p {
 
 .multiline-cene,
 .multiline-opis {
-  background-color: rgba(255,255,255,0.5);
+  background-color: rgba(255,255,255,0.45);
 }
 
 .napomene {
   width: 100%;
   text-align: left;
   padding: 20px;
-  background-color: rgba(255,255,255,0.5);
+  background-color: rgba(255,255,255,0.45);
 }
 
-/* Media queries for mobile view */
+/* Media queries for computer view */
 @media (min-width: 481px) {
   body {
     background-color: gray;
@@ -95,7 +95,7 @@ p {
   }
 
   .header-container-mobile {
-    background-color: rgba(255,255,255,0.2);
+    background-color: rgba(255,255,255,0);
     display: block;
     justify-content: space-between;
   }
@@ -105,8 +105,9 @@ p {
     text-align: center;
   }
   .left-section {
-    padding: 20px;
+    padding: 10px;
     text-align: center;
+    background-color: rgba(255,255,255,1);
   }
   .center-section {
     display: block;
@@ -174,12 +175,22 @@ p {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    font-family: Arial, sans-serif;
-    margin: 0;
     font-family: "Lucida Handwriting", "Times", cursive;
+    margin: 0;
     padding: 0;
   }
-
+  .left-section-1 {
+    padding: 2px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: rgba(255,255,255,0.3);
+  }
+  .left-section-2 {
+    padding: 2px;
+    text-align: left;
+    border-radius: 10px;
+    background-color: rgba(255,255,255,0.3);
+  }
   .image-container img {
     margin-right: 10px; /* Optional - adds some space between images */
     width: 30%;
@@ -197,7 +208,7 @@ p {
     white-space: nowrap;
     width: 85%;
     text-align: justify;
-    background-color: rgba(255,255,255,0.2);
+    background-color: rgba(255,255,255,0.1);
   }
 
   .container {
@@ -206,7 +217,7 @@ p {
   }
 
   .header-container-mobile {
-    background-color: rgba(255,255,255,0.2);
+    background-color: rgba(255,255,255,0);
     display: block;
     justify-content: space-between;
     padding: 20px;
