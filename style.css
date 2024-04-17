@@ -1,7 +1,7 @@
 main {
-  display: flex; 
-  flex-wrap: wrap; 
-  justify-content:center; 
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 header {
@@ -9,9 +9,11 @@ header {
   padding: 20px;
   text-align: center;
 }
+
 h1 {
   margin: 0;
 }
+
 section {
   border: 0.1px solid rgb(100, 100, 100);
   border-radius: 10px;
@@ -21,16 +23,19 @@ section {
   resize: both;
   overflow: auto;
   width: 80%;
-  background-color: rgba(255,255,255,0.1);
+  background-color: rgba(255, 255, 255, 0.1);
 }
+
 .logo {
-  width:auto!important;
-  height:250px;
-  margin-right:.5rem;
+  width: auto !important;
+  height: 250px;
+  margin-right: .5rem;
 }
+
 h2 {
   margin: 0;
 }
+
 img {
   max-width: 100%;
   height: auto;
@@ -44,7 +49,7 @@ p {
 .contact-info {
   text-align: center;
   margin-top: 20px;
-  background-color: rgba(255,255,255,0.45);
+  background-color: rgba(255, 255, 255, 0.45);
 }
 
 .image-container {
@@ -53,14 +58,15 @@ p {
 
 .multiline-cene,
 .multiline-opis {
-  background-color: rgba(255,255,255,0.45);
+  background-color: rgba(255, 255, 255, 0.45);
+  text-wrap: wrap;
 }
 
 .napomene {
   width: 100%;
   text-align: left;
   padding: 20px;
-  background-color: rgba(255,255,255,0.45);
+  background-color: rgba(255, 255, 255, 0.45);
 }
 
 /* Media queries for computer view */
@@ -74,8 +80,10 @@ p {
     margin: 0;
     padding: 0;
   }
+
   .image-container img {
-    margin-right: 10px; /* Optional - adds some space between images */
+    margin-right: 10px;
+    /* Optional - adds some space between images */
     width: 18%;
   }
 
@@ -95,7 +103,7 @@ p {
   }
 
   .header-container-mobile {
-    background-color: rgba(255,255,255,0);
+    background-color: rgba(255, 255, 255, 0);
     display: block;
     justify-content: space-between;
   }
@@ -104,11 +112,13 @@ p {
     padding: 20px;
     text-align: center;
   }
+
   .left-section {
     padding: 10px;
     text-align: center;
-    background-color: rgba(255,255,255,1);
+    background-color: rgba(255, 255, 255, 1);
   }
+
   .center-section {
     display: block;
     width: 100%;
@@ -117,10 +127,10 @@ p {
   }
 
   .image {
-      cursor: pointer;
+    cursor: pointer;
   }
 
-    
+
   .image img:hover {
     transform: scale(1.1);
   }
@@ -137,20 +147,22 @@ p {
     margin-top: -1px;
     animation: zoom 0.3s ease-in-out;
   }
-    
+
   @keyframes zoom {
     from {
       transform: scale(0);
     }
+
     to {
       transform: scale(1);
     }
   }
+
   .modal img {
     width: 50%;
     object-fit: cover;
   }
-    
+
   .closeBtn {
     color: rgba(255, 255, 255, 0.87);
     font-size: 20px;
@@ -162,7 +174,7 @@ p {
     transition: 0.2s ease-in-out;
     text-transform: none;
   }
-    
+
   .closeBtn:hover {
     color: rgb(255, 255, 255);
   }
@@ -179,26 +191,31 @@ p {
     margin: 0;
     padding: 0;
   }
+
   .left-section-1 {
     padding: 2px;
     text-align: center;
     border-radius: 10px;
-    background-color: rgba(255,255,255,0.3);
+    background-color: rgba(255, 255, 255, 0.3);
   }
+
   .left-section-2 {
     padding: 2px;
     text-align: left;
     border-radius: 10px;
-    background-color: rgba(255,255,255,0.3);
+    background-color: rgba(255, 255, 255, 0.3);
   }
+
   .image-container img {
-    margin-right: 10px; /* Optional - adds some space between images */
+    margin-right: 10px;
+    /* Optional - adds some space between images */
     width: 30%;
   }
 
   .image-section {
     padding: 28px;
   }
+
   .multiline {
     display: none;
   }
@@ -208,7 +225,7 @@ p {
     white-space: nowrap;
     width: 85%;
     text-align: justify;
-    background-color: rgba(255,255,255,0.1);
+    background-color: rgba(255, 255, 255, 0.1);
   }
 
   .container {
@@ -217,7 +234,7 @@ p {
   }
 
   .header-container-mobile {
-    background-color: rgba(255,255,255,0);
+    background-color: rgba(255, 255, 255, 0);
     display: block;
     justify-content: space-between;
     padding: 20px;
@@ -232,10 +249,10 @@ p {
   }
 
   .image {
-      cursor: pointer;
+    cursor: pointer;
   }
 
-    
+
   .image img:hover {
     transform: scale(1.1);
   }
@@ -252,20 +269,22 @@ p {
     margin-top: -1px;
     animation: zoom 0.3s ease-in-out;
   }
-    
+
   @keyframes zoom {
     from {
       transform: scale(0);
     }
+
     to {
       transform: scale(1);
     }
   }
+
   .modal img {
     width: 50%;
     object-fit: cover;
   }
-    
+
   .closeBtn {
     color: rgba(255, 255, 255, 0.87);
     font-size: 20px;
@@ -277,7 +296,7 @@ p {
     transition: 0.2s ease-in-out;
     text-transform: none;
   }
-    
+
   .closeBtn:hover {
     color: rgb(255, 255, 255);
   }
